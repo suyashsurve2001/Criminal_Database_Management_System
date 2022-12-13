@@ -10,12 +10,7 @@ crud_db = db[db_name]
 collection_name="criminal"
 employee = crud_db[collection_name] 
 
-# url = "mongodb://localhost:27017/"
-# db = pymongo.MongoClient(url)
-# db_name = "cruddb"
-# crud_db = db[db_name]
-# collection_name="employee"
-# employee = crud_db[collection_name] 
+
 
 def create():
     name = cname.get()
