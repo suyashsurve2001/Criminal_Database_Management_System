@@ -13,7 +13,70 @@ plot(contour(colorscale="hot",
          0    6.25  2.5   5.62  10
        ]
        ))
+       
+ ////////////////////////////////////////////////////
+ pratical 2 =    Implement Fibonacci and Golden Search
+ 
 
+Fibonacci Search
+
+function f(n::int)
+return (1.618^n - (1 - 1.618)^n) / sqrt(5)
+end
+function fibonacci_search(f, a, b, n; ϵ = 0.01)
+s = (1 - √5) / (1 + √5)
+ρ = 1 / (1.618 * (1 - s^(n + 1)) / (1 - s^n))
+d = ρ * b + (1 - ρ) * a
+yd = f(d)
+for i = 1:n1
+print("a: ",a,"\n")
+print("b: ",b,"\n")
+if i == n - 1
+c = ϵ * a + (1 - ϵ) *
+delse
+c = ρ * a + (1 - ρ) * b
+end
+yc = f(c) if yc < yd
+b, d, yd = d, c, 
+ycelse
+a, b = b, 
+cend
+ρ = 1 / (1.618 * (1 - s^(n - i + 1)) / (1 - s^(n - i)))
+end
+return a < b ? (a, b) : (b, a)
+end
+function f(x)
+return x * x - x + 1
+end
+result=fibonacci_search(f,1,5,3)
+
+
+
+Golden Search
+
+function golden_section_search(f, a, b, n)
+ρ = 1.618 - 1
+d = ρ * b + (1 - ρ) * a
+yd = f(d)
+for i = 1:n1
+print("a: ",a, "\n")
+print("b: ",b, "\n")
+c = ρ * a + (1 - ρ) * b
+yc = f(c)
+if yc <
+yd
+b, d, yd = d, c, 
+yc
+else
+a, b = b,c
+end
+end
+return a < b ? (a, b) : (b, a)
+end
+function 
+f(x)return 
+x*x end
+re=golden_section_search(f,3,6,5)
 
 
 ////////////////////////////////////////////////////////
